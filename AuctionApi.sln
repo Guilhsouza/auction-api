@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A40258AD-B7F6-4525-BEBE-19EFFCC665EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B5B5F777-8E7B-432E-9B32-55849603BE18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionProject.API", "src\Auction.API\AuctionProject.API.csproj", "{837D4465-5699-4849-95AF-7C612C48725E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{911BCFDE-3CBA-42FC-9D3D-D772BB4276D9}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{837D4465-5699-4849-95AF-7C612C48725E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837D4465-5699-4849-95AF-7C612C48725E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837D4465-5699-4849-95AF-7C612C48725E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837D4465-5699-4849-95AF-7C612C48725E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{837D4465-5699-4849-95AF-7C612C48725E} = {A40258AD-B7F6-4525-BEBE-19EFFCC665EA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CB97B6A-F2A2-41F1-85BD-1B2BD81A4E6D}
+	EndGlobalSection
+EndGlobal
