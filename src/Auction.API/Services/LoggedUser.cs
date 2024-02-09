@@ -3,7 +3,7 @@ using AuctionProject.API.Entities;
 
 namespace AuctionProject.API.Services;
 
-public class LoggedUser
+public class LoggedUser : ILoggedUser
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
     private readonly IUserRepository _repository;
