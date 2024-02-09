@@ -1,6 +1,12 @@
+using AuctionProject.API.Contracts;
 using AuctionProject.API.Filters;
+using AuctionProject.API.Repositories;
+using AuctionProject.API.Repositories.DataAcess;
+using AuctionProject.API.Repositories.NewFolder;
 using AuctionProject.API.Services;
+using AuctionProject.API.useCases.Auctions.GetCurrent;
 using AuctionProject.API.useCases.Offers.CreateOffer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,6 +50,15 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<AuthenticationUserAttribute>();
 builder.Services.AddScoped<LoggedUser>();
 builder.Services.AddScoped<CreateOffer>();
+builder.Services.AddScoped<GetCurrentAuction>();
+builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
+builder.Services.AddScoped<IOfferRepository, OfferRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddDbContext<AuctionProjectDbContext>(options =>
+{
+    options.UseSqlite(@"Data Source=C:\Users\guied\OneDrive\Área de Trabalho\Estudos Programação\NLW-C#\leilaoDbNLW.db");
+});
 
 builder.Services.AddHttpContextAccessor();
 
