@@ -11,7 +11,7 @@ public class AuctionController : AuctionBaseController
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public IActionResult GetAuctionResult([FromServices] GetCurrentAuction useCase)
     {
-        var result = useCase.execute();
+        var result = useCase.Execute();
 
         if(result is null)
             return NoContent();
