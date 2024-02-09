@@ -1,4 +1,4 @@
-﻿using AuctionProject.API.Repositories;
+﻿using AuctionProject.API.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -7,17 +7,19 @@ namespace AuctionProject.API.Filters;
 
 public class AuthenticationUserAttribute : AuthorizeAttribute, IAuthorizationFilter
 {
+    private IUserRepository _repository;
+
+    public AuthenticationUserAttribute(IUserRepository repository) => _repository = repository;
+   
     public void OnAuthorization(AuthorizationFilterContext context)
     {
        try
         {
             var token = TokenOnRequest(context.HttpContext);
 
-            var repository = new AuctionProjectDbContext();
-
             var email = FromBase64ToString(token);
 
-            var exist = repository.Users.Any(Users => Users.Email.Equals(email));
+            var exist = _repository.ExistUserWithEmail(email);
 
             if (exist == false)
             {
