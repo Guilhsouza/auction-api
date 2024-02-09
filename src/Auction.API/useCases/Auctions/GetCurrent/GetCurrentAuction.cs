@@ -1,8 +1,5 @@
 ﻿using AuctionProject.API.Contracts;
 using AuctionProject.API.Entities;
-using AuctionProject.API.Repositories;
-using AuctionProject.API.Repositories.NewFolder;
-using Microsoft.EntityFrameworkCore;
 
 namespace AuctionProject.API.useCases.Auctions.GetCurrent;
 
@@ -12,7 +9,7 @@ public class GetCurrentAuction
 
     public GetCurrentAuction(IAuctionRepository repository) => _repository = repository;
 
-    public Auction? execute()
+    public Auction? Execute()
     {
         return _repository.GetCurrent();
     }
