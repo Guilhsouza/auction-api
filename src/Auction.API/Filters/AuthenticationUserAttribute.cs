@@ -7,7 +7,7 @@ namespace AuctionProject.API.Filters;
 
 public class AuthenticationUserAttribute : AuthorizeAttribute, IAuthorizationFilter
 {
-    private IUserRepository _repository;
+    private readonly IUserRepository _repository;
 
     public AuthenticationUserAttribute(IUserRepository repository) => _repository = repository;
    
